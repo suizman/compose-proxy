@@ -10,8 +10,8 @@ services:
     labels:
       - "web-b.local=80:80"
 
-  compose-lb:
-    image: suizman/compose-lb
+  compose-proxy:
+    image: suizman/compose-proxy
     environment: 
       - PROJECT_NAME=testing
     volumes:
