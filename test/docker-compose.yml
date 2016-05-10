@@ -1,0 +1,22 @@
+version: '2'
+services:
+  web-a:
+    image: nginx:1.10
+    labels:
+      - "web-a.local=80:80"
+
+  web-b:
+    image: nginx:1.10
+    labels:
+      - "web-b.local=80:80"
+
+  compose-lb:
+    image: suizman/compose-lb
+    environment: 
+      - PROJECT_NAME=testing
+    volumes:
+      - ./:/tmp/compose:ro
+      - /var/run/docker.sock:/var/run/docker.sock
+    ports:
+      - 80:80
+
