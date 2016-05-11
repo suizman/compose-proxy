@@ -3,12 +3,12 @@ services:
   web-a:
     image: nginx:1.10
     labels:
-      - "web-a.local=80:80"
+      - "web-a.local=80"
 
   web-b:
     image: nginx:1.10
     labels:
-      - "web-b.local=80:80"
+      - "web-b.local=80"
 
   compose-proxy:
     image: suizman/compose-proxy
