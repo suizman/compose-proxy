@@ -14,4 +14,6 @@ RUN apt-get purge curl -y -qq && \
 
 COPY scripts/run.sh /bin
 
+EXPOSE 80
+
 CMD ["/bin/run.sh"]
